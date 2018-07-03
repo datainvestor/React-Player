@@ -16,8 +16,8 @@ constructor(props) {
     this.DMSearch()
 }
 
-    DMSearch(){
-        fetch(`https://api.dailymotion.com/videos?fields=description,id,thumbnail_60_url,title,url,&limit=5&search=cars`)
+    DMSearch(term){
+        fetch(`https://api.dailymotion.com/videos?fields=description,id,thumbnail_60_url,title,url,&limit=5&search=${term}`)
         .then(result => result.json())
         .then(videos2 => {
             //console.log(videos2.list[0]);
@@ -29,7 +29,7 @@ constructor(props) {
          });  
         }  
     render () {
-        const DMSearch = _.debounce(() => { this.DMSearch()}, 400);
+        const DMSearch = _.debounce((term) => { this.DMSearch(term)}, 400);
         return (
             <div>
                 <SearchBar onSearchTermChange= {DMSearch}/>

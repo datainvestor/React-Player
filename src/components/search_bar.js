@@ -6,7 +6,7 @@ class SearchBar extends Component {
     constructor(props){
         super(props)
 
-        this.state={term: ''}
+        this.state={term: ' '}
     } //this creates state for the function
 
     //create render method for the class:
@@ -20,7 +20,8 @@ class SearchBar extends Component {
             
             <input 
             value={this.state.term}
-            onChange={event => this.onInputChange(event.target.value)}/> 
+            onChange={event => this.onInputChange(event.target.value)}
+            /> 
             
         </div> 
         )
