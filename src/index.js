@@ -36,7 +36,8 @@ constructor(props) {
                 <VideoDetail video={this.state.selectedVideo}/> 
                 <VideoList 
                 onVideoSelect={selectedVideo=>this.setState({selectedVideo})}
-                videos2={this.state.videos2}/>
+                videos2={this.state.videos2}
+                selectedVideo={this.state.selectedVideo}/>
             </div>
         )
     }
